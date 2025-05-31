@@ -8,28 +8,25 @@ const FeatureList = [
     Svg: require("@site/static/img/icon-bomb.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Don't abandon browser bookmarks because of bookmark debt and fatigue,
+        instead dotonate old bookmarks.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
+    title: "Take Control",
     Svg: require("@site/static/img/icon-sub.svg").default,
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
+      <>Manager your bookmarks like a command center in a nuclear submarine.</>
     ),
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/icon-friend.svg").default,
+    title: "Browser Plugin",
+    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        ExplosiveBookmarks is a browser plugin that makes bookmarks fun again
+        and gives you control.
       </>
     ),
   },
@@ -41,7 +38,7 @@ function Feature({ Svg, title, description }) {
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text--center padding-horiz--md padding-vert--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
