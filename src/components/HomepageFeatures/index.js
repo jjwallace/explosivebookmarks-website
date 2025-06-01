@@ -9,7 +9,7 @@ const FeatureList = [
     description: (
       <>
         Don't abandon browser bookmarks because of bookmark debt and fatigue,
-        instead dotonate old bookmarks.
+        instead detonate old bookmarks.
       </>
     ),
   },
@@ -22,11 +22,11 @@ const FeatureList = [
   },
   {
     title: "Browser Plugin",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/img/icon-plugin.svg").default,
     description: (
       <>
-        ExplosiveBookmarks is a browser plugin that makes bookmarks fun again
-        and gives you control.
+        ExplosiveBookmarks is a browser plugin that makes bookmarks fun again,
+        easy to manage and a pleasurable experiance.
       </>
     ),
   },

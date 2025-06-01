@@ -54,6 +54,34 @@ import { useEffect, useRef, useState } from "react";
 import Heading from "@theme/Heading";
 import styles from "./index.module.css";
 
+const slogans = [
+  "Your detonator for the web.",
+  "Blow up your bookmark bloat.",
+  "Clear the clutter. Keep the impact.",
+  "Kaboom your chaos.",
+  "Because bookmarks shouldn't be a minefield.",
+  "Minimal effort. Maximum detonation.",
+  "Organize explosively. Browse intentionally.",
+  "Declutter the web—one boom at a time.",
+  "Your browser's reset button.",
+  "Smart cleanup with a blast.",
+  "Explode the mess. Reveal the useful.",
+  "Reclaim your web—one bookmark at a time.",
+  "Tactical cleanup for your digital life.",
+  "Make your browser feel brand new.",
+  "Launch your bookmarks into order.",
+  "Bookmark fatigue? Time to detonate.",
+  "Where digital chaos meets precision cleanup.",
+  "Web curation, with an attitude.",
+  "Organize like a bomb squad.",
+  "Leave no bookmark behind.",
+  "A new tab, a fresh start.",
+  "Memory meets momentum.",
+  "Control the chaos, don't just collect it.",
+  "Nuclear cleanup for your browser.",
+  "Clean up with force, not friction.",
+];
+
 function PhaserBackground() {
   const gameRef = useRef(null);
   const phaserGameRef = useRef(null);
@@ -180,6 +208,50 @@ function PhaserBackground() {
   );
 }
 
+function RotatingSlogan({ slogans, secondsPerSlogan = 3 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % slogans.length);
+        setIsVisible(true);
+      }, 300); // Half second for fade out/in transition
+    }, secondsPerSlogan * 1000);
+
+    return () => clearInterval(interval);
+  }, [slogans.length, secondsPerSlogan]);
+
+  return (
+    <div
+      style={{
+        height: "60px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: "20px",
+      }}
+    >
+      <p
+        style={{
+          fontSize: "1.7rem",
+          fontWeight: "500",
+          color: "rgba(255, 255, 255, 0.9)",
+          textAlign: "center",
+          margin: 0,
+          opacity: isVisible ? 1 : 0,
+          transition: "opacity 0.3s ease-in-out",
+          fontStyle: "italic",
+        }}
+      >
+        {slogans[currentIndex]}
+      </p>
+    </div>
+  );
+}
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const [selected, setSelected] = useState(null);
@@ -229,6 +301,9 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
 
+        {/* Rotating Slogan Section */}
+        <RotatingSlogan slogans={slogans} secondsPerSlogan={4} />
+
         <div
           style={{
             backgroundColor: "rgba(43, 43, 43, 0.5)",
@@ -238,7 +313,7 @@ function HomepageHeader() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "20px",
+            gap: "15px",
             width: "fit-content",
             marginLeft: "auto",
             marginRight: "auto",
@@ -282,6 +357,21 @@ function HomepageHeader() {
             })}
           </div>
 
+          {showPrompt && (
+            <div
+              style={{
+                color: "#fff",
+                fontSize: "0.9rem",
+                opacity: 0.8,
+                animation: "fadeinout 2s ease-in-out",
+                textAlign: "center",
+                marginTop: "-5px",
+              }}
+            >
+              Choose a browser
+            </div>
+          )}
+
           <Link
             className="button button--secondary button--lg"
             to={
@@ -303,20 +393,6 @@ function HomepageHeader() {
           >
             Download Plugin
           </Link>
-
-          {showPrompt && (
-            <div
-              style={{
-                marginTop: "10px",
-                color: "#fff",
-                fontSize: "0.9rem",
-                opacity: 0.7,
-                animation: "fadeinout 2s ease-in-out",
-              }}
-            >
-              Choose a browser
-            </div>
-          )}
         </div>
       </div>
 
@@ -325,8 +401,8 @@ function HomepageHeader() {
         {`
         @keyframes fadeinout {
           0% { opacity: 0; }
-          25% { opacity: 0.7; }
-          75% { opacity: 0.7; }
+          25% { opacity: 0.8; }
+          75% { opacity: 0.8; }
           100% { opacity: 0; }
         }
         `}

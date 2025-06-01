@@ -84,9 +84,9 @@ We encourage users to review this policy periodically to stay informed about how
 
 If you have any questions, concerns, or requests regarding your privacy or this policy, you can contact us at:
 
-- **Email:** [your-email@example.com]
+- **Email:** [jj@explosivebookmarks.com]
 - **Developer/Company Name:** ExplosiveBookmarks
-- **Website:** [https://yourwebsite.com]
+- **Website:** [https://explosivebookmarks.com]
 
 ---
 
