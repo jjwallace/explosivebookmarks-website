@@ -264,19 +264,19 @@ function HomepageHeader() {
       id: "brave",
       label: "Brave",
       icon: "img/icon-browser-brave.png",
-      downloadPath: "/downloads/brave.zip",
+      downloadPath: "/downloads/under-construction",
     },
     {
       id: "chrome",
       label: "Chrome",
       icon: "img/icon-browser-chrome.png",
-      downloadPath: "/downloads/chrome.zip",
+      downloadPath: "/downloads/under-construction",
     },
     {
       id: "firefox",
       label: "Firefox",
       icon: "img/icon-browser-firefox.png",
-      downloadPath: "/downloads/firefox.zip",
+      downloadPath: "/downloads/under-construction",
     },
   ];
 
