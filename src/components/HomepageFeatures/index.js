@@ -3,12 +3,12 @@ import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 
 const featureColors = [
-  "#6e4a41", // dark burnt sienna (muted fire brown)
-  "#5a4a3a", // dark greyish olive brown
-  "#7a5842", // muted dark caramel
-  "#514537", // dark charcoal brown
-  "#665148", // smoky taupe brown
-  "#4a4036", // dark grey-brown
+  "#ff6a00", // blazing orange
+  "#ff3c00", // bright flame red
+  "#ffcc00", // hot yellow (like the core of a flame)
+  "#ff1e00", // molten lava red
+  "#e25822", // ember orange
+  "#ffd700", // golden yellow (radiant heat)
 ];
 
 const FeatureList = [
